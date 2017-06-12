@@ -1,0 +1,29 @@
+{
+  "name": "react-native-template",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "@types/jest": "19.2.2",
+    "@types/react": "15.0.27",
+    "@types/react-native": "0.44.10",
+    "jest-expo": "1.0.1",
+    "react-test-renderer": "16.0.0-alpha.6",
+    "rimraf": "2.6.1"
+  },
+  "scripts": {
+    "clean": "rimraf compiled",
+    "packager": "react-native start --root compiled/",
+    "tsc": "tsc -w",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "test": "node node_modules/jest/bin/jest.js --watch"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.44.0",
+    "typescript": "2.3.4"
+  }
+}
