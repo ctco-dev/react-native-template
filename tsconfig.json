@@ -20,12 +20,7 @@
   },
   "exclude": [
     "node_modules",
-    "build",
-    ".storybook",
-    "config",
-    "public",
-    "scripts",
-    ".awcache",
-    "coverage"
+    "compiled",
+    "storybook"
   ]
 }
