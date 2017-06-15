@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>7RPKPV2WF6.org.reactjs.native.example.reactnativetemplate</string>
+	<string>7RPKPV2WF6.lv.ctco.reactnativetemplate</string>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>7RPKPV2WF6.org.reactjs.native.example.reactnativetemplate</string>
+		<string>7RPKPV2WF6.lv.ctco.reactnativetemplate</string>
 	</array>
 </dict>
 </plist>
