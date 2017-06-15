@@ -3,6 +3,7 @@ import {Button, StyleSheet, Text, View} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import BarCode from './bar-code/BarCode';
 import Page from './page/Page';
+import I18n from './i18n/i18n';
 
 const StorybookUI = require('../storybook/storybook.js').default;
 
@@ -28,7 +29,7 @@ class App extends React.Component<any, AppState> {
 
     return (
       <View style={styles.container}>
-        <Text style={{fontSize: 24}}>Hello</Text>
+        <Text style={{fontSize: 24}}>{I18n.t('greeting')}</Text>
         <Text>Open up App.js to start working on your app!</Text>
         <Text>Changes you make will automatically reload.</Text>
         <Text>Shake your phone to open the developer menu.</Text>
