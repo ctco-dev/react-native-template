@@ -9,6 +9,7 @@ const StorybookUI = require('../storybook/storybook.js').default;
 
 interface AppState {
   storybook: boolean;
+  locale: string;
 }
 
 class App extends React.Component<any, AppState> {
@@ -17,7 +18,8 @@ class App extends React.Component<any, AppState> {
   };
 
   state = {
-    storybook: false
+    storybook: false,
+    locale: 'ru'
   };
 
   render() {
@@ -27,12 +29,18 @@ class App extends React.Component<any, AppState> {
 
     const {navigation} = this.props;
 
+    I18n.locale = this.state.locale;
+
     return (
       <View style={styles.container}>
         <Text style={{fontSize: 24}}>{I18n.t('greeting')}</Text>
         <Text>Open up App.js to start working on your app!</Text>
         <Text>Changes you make will automatically reload.</Text>
         <Text>Shake your phone to open the developer menu.</Text>
+        <Button
+          onPress={() => this.setState({locale: this.state.locale === 'en' ? 'ru' : 'en'})}
+          title="change language"
+        />
         <BarCode/>
         <View style={{flexDirection: 'row'}}>
           <Button
