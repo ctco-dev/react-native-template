@@ -30,7 +30,6 @@ class App extends React.Component<any, AppState> {
       return <StorybookUI/>;
     }
 
-    const {navigation} = this.props;
     const {StyleProvider} = nativeBase as any;
 
     I18n.locale = this.state.locale;
@@ -44,14 +43,15 @@ class App extends React.Component<any, AppState> {
               <Text>Open up App.js to start working on your app!</Text>
               <Text>Changes you make will automatically reload.</Text>
               <Text>Shake your phone to open the developer menu.</Text>
-              <Button style={{alignSelf: 'center'}}
-                      onPress={() => this.setState({locale: this.state.locale === 'en' ? 'ru' : 'en'})}
+              <Button
+                style={{alignSelf: 'center'}}
+                onPress={this.changeLanguage}
               >
                 <Text>Change language</Text>
               </Button>
               <BarCode/>
               <View style={{flexDirection: 'row'}}>
-                <Button onPress={() => navigation.navigate('Page')}>
+                <Button onPress={this.goToPage}>
                   <Text>Go to the PAGE</Text>
                 </Button>
                 {__DEV__ ? this.renderStoryBookButton() : null}
@@ -60,7 +60,7 @@ class App extends React.Component<any, AppState> {
           </Content>
           <Footer>
             <FooterTab>
-              <Button full>
+              <Button full={true}>
                 <Text>Footer</Text>
               </Button>
             </FooterTab>
@@ -72,11 +72,15 @@ class App extends React.Component<any, AppState> {
 
   renderStoryBookButton = () => (
     <View style={{marginLeft: 10}}>
-      <Button onPress={() => this.setState({storybook: true})}>
+      <Button onPress={this.showStoryBook}>
         <Text>Storybook</Text>
       </Button>
     </View>
-  );
+  )
+
+  showStoryBook = () => this.setState({storybook: true});
+  changeLanguage = () => this.setState({locale: this.state.locale === 'en' ? 'ru' : 'en'});
+  goToPage = () => this.props.navigation.navigate('Page');
 }
 
 const styles = StyleSheet.create({

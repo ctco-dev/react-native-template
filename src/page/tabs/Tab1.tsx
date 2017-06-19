@@ -14,15 +14,15 @@ class Tab1 extends React.Component<any, any> {
   };
 
   render() {
-    const {navigation} = this.props;
-
     return (
       <Button
-        onPress={() => navigation.navigate('Tab2')}
+        onPress={this.navigate}
         title="Go to Tab 2"
       />
     );
   }
+
+  navigate = () => this.props.navigation.navigate('Tab2');
 }
 
 const styles = StyleSheet.create({

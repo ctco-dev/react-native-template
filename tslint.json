@@ -1,0 +1,3 @@
+{
+  "extends": ["@ctco-dev/tslint-config-react"]
+}

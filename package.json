@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "@ctco-dev/tslint-config-react": "0.1.5",
     "@storybook/react-native": "3.1.3",
     "@types/jest": "19.2.2",
     "@types/react": "15.0.27",
@@ -10,17 +11,21 @@
     "@types/react-navigation": "1.0.7",
     "babel-jest": "20.0.3",
     "babel-preset-react-native": "1.9.2",
+    "chokidar-cli": "1.2.0",
     "jest": "20.0.4",
     "jest-cli": "20.0.4",
     "react-native-storybook-loader": "1.3.2",
     "react-test-renderer": "16.0.0-alpha.6",
     "rimraf": "2.6.1",
-    "ts-jest": "20.0.6"
+    "ts-jest": "20.0.6",
+    "tslint": "5.4.3"
   },
   "scripts": {
     "clean": "rimraf compiled",
     "packager": "react-native start --root compiled",
     "tsc": "npm run clean && tsc -w",
+    "lint": "tslint \"src/**/*.ts?(x)\"",
+    "lint:watch": "chokidar \"src/**/*.ts?(x)\" -c \"npm run lint\" --initial",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "test": "jest --watch",
