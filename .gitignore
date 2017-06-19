@@ -2,3 +2,8 @@ node_modules/
 compiled/
 .idea/
 npm-debug.*
+ios/build
+android/.gradle/
+android/build
+android/app/build
+android/local.properties
