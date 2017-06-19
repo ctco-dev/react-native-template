@@ -192,6 +192,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/pavelstaselun/Projects/react-native-template/android/app/build/intermediates/exploded-aar/reactnativetemplate/react-native-i18n/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6c5ab9c72b8527898384318b411a5bb2c36e445a">
+        <dex dex="/Users/pavelstaselun/Projects/react-native-template/android/app/build/intermediates/pre-dexed/debug/reactnativetemplate-react-native-i18n-unspecified_f87a82574835ee12ebabccf28d8ff30d298416fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/pavelstaselun/Projects/react-native-template/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"

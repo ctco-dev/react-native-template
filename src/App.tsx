@@ -1,5 +1,8 @@
 import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
+import {Container, Content, Footer, FooterTab, Button, H1} from 'native-base';
+import * as nativeBase from 'native-base';
+import getTheme from './native-base-theme/components';
 import {StackNavigator} from 'react-navigation';
 import BarCode from './bar-code/BarCode';
 import Page from './page/Page';
@@ -28,34 +31,50 @@ class App extends React.Component<any, AppState> {
     }
 
     const {navigation} = this.props;
+    const {StyleProvider} = nativeBase as any;
 
     I18n.locale = this.state.locale;
 
     return (
-      <View style={styles.container}>
-        <Text style={{fontSize: 24}}>{I18n.t('greeting')}</Text>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <Button
-          onPress={() => this.setState({locale: this.state.locale === 'en' ? 'ru' : 'en'})}
-          title="change language"
-        />
-        <BarCode/>
-        <View style={{flexDirection: 'row'}}>
-          <Button
-            onPress={() => navigation.navigate('Page')}
-            title="Go to the PAGE"
-          />
-          {__DEV__ ? this.renderStoryBookButton() : null}
-        </View>
-      </View>
+      <StyleProvider style={getTheme()}>
+        <Container>
+          <Content>
+            <View style={styles.container}>
+              <H1>{I18n.t('greeting')}</H1>
+              <Text>Open up App.js to start working on your app!</Text>
+              <Text>Changes you make will automatically reload.</Text>
+              <Text>Shake your phone to open the developer menu.</Text>
+              <Button style={{alignSelf: 'center'}}
+                      onPress={() => this.setState({locale: this.state.locale === 'en' ? 'ru' : 'en'})}
+              >
+                <Text>Change language</Text>
+              </Button>
+              <BarCode/>
+              <View style={{flexDirection: 'row'}}>
+                <Button onPress={() => navigation.navigate('Page')}>
+                  <Text>Go to the PAGE</Text>
+                </Button>
+                {__DEV__ ? this.renderStoryBookButton() : null}
+              </View>
+            </View>
+          </Content>
+          <Footer>
+            <FooterTab>
+              <Button full>
+                <Text>Footer</Text>
+              </Button>
+            </FooterTab>
+          </Footer>
+        </Container>
+      </StyleProvider>
     );
   }
 
   renderStoryBookButton = () => (
     <View style={{marginLeft: 10}}>
-      <Button title="Storybook" onPress={() => this.setState({storybook: true})}/>
+      <Button onPress={() => this.setState({storybook: true})}>
+        <Text>Storybook</Text>
+      </Button>
     </View>
   );
 }
@@ -63,7 +82,6 @@ class App extends React.Component<any, AppState> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center'
   }
