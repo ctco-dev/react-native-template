@@ -1,4 +1,0 @@
-#Mon Jun 19 10:24:08 EEST 2017
-base.0=/Users/pavelstaselun/Projects/react-native-template/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
-renamed.0=classes.dex
-file.0=/Users/pavelstaselun/Projects/react-native-template/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
