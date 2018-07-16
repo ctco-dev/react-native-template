@@ -4,6 +4,8 @@ There is a TypeScript, storybook support.
 
 ###Development
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ctco-dev/react-native-template.svg)](https://greenkeeper.io/)
+
 - Run `yarn` or `npm i` to install dependencies.
 - Run `npm run lint:watch` to start TSLinter in watch mode.
 - Run `npm run tsc` to start TypeScript in watch mode, which will watch `src` folder and put compilation result into `compiled` folder.
